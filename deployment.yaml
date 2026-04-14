@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: openrouter-chat
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: openrouter-chat
+      instrumentation: openlit
+  template:
+    metadata:
+      labels:
+        app: openrouter-chat
+        instrumentation: openlit
+    spec:
+      containers:
+      - name: openrouter-chat
+        image: bhoopeshsharma/openrouter-chat:latest   # your Docker image
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: OPENROUTER_API_KEY
+          value: "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"

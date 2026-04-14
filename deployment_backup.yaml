@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gemini-chat-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gemini-chat
+      instrumentation: openlit
+  template:
+    metadata:
+      labels:
+        app: gemini-chat
+        instrumentation: openlit
+    spec:
+      containers:
+      - name: gemini-chat
+        image: bhoopeshsharma/gemini-assistant-2026:latest   # your image
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+        env:
+        - name: GEMINI_API_KEY
+          value: "AIzaSyBkWB5Lv4oLygkR8uKG6ldIstUbGBn0kgY"

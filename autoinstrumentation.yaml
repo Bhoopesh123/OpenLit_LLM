@@ -1,0 +1,14 @@
+apiVersion: openlit.io/v1alpha1
+kind: AutoInstrumentation
+metadata:
+  name: grafana-observability
+spec:
+  selector:
+    matchLabels:
+      instrumentation: openlit
+  python:
+    instrumentation:
+      enabled: true
+  otlp:
+    endpoint: "https://otlp-gateway-prod-us-east-0.grafana.net/otlp"  # Grafana OTLP gateway
+    headers: "Authorization=Basic OTY1NjIwOmdsY19leUp2SWpvaU1URTFOakV4T0NJc0ltNGlPaUp6ZEdGamF5MDVOalUyTWpBdGIzUnNjQzEzY21sMFpTMXZkR3h3WDNKM0lpd2lheUk2SWt4bmFqSjNOVEUyZDBsUlpUZzJPVVUzTW1seWFXbGpOQ0lzSW0waU9uc2ljaUk2SW5CeWIyUXRkWE10WldGemRDMHdJbjE5"
