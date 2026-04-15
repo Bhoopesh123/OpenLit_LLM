@@ -207,7 +207,7 @@ data:
         logger.info("🤖 Testing OpenAI API calls...")
         
         # Check if OpenAI API key is available
-        api_key = "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"
+        api_key = "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"
         if not api_key:
             logger.warning("⚠️  OPENAI_API_KEY not found, skipping OpenAI tests")
             logger.info("💡 To test OpenAI instrumentation, provide an API key in the secret")

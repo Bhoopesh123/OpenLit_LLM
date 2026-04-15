@@ -36,6 +36,7 @@ https://grafana.com/blog/ai-observability-zero-code/?camp=blog&mdm=social&src=li
 
 helm repo add openlit https://openlit.github.io/helm/
 helm repo update
+helm install openlit-operator openlit/openlit-operator
 
 # 6. Validate the metrics on Grafana
 To Search all of the time series data points grouping by job  in query  
